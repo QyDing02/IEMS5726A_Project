@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>伤口分割 Demo</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="panel">
+    <h2>原始图片</h2>
+    <div class="img-box">
+      <img id="origin-preview" hidden />
+    </div>
+
+    <h2>分析结果</h2>
+    <div class="img-box">
+      <img id="result-preview" hidden />
+    </div>
+
+    <div class="controls">
+      <input id="file-input" type="file" accept="image/*" />
+      <!-- 想看不同输出可以自己切换 -->
+      <select id="output-type">
+        <option value="visualization" selected>可视化（红圈）</option>
+        <option value="mask">二值 Mask</option>
+        <option value="contour">轮廓线</option>
+      </select>
+      <button id="upload-btn">上传并分析图片</button>
+    </div>
+
+    <p id="status"></p>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
