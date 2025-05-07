@@ -46,7 +46,7 @@ body {
     flex: 1 1 100%;
   }
   
-  #upload-btn {
+  /* #upload-btn {
     flex: 1 1 100%;
     padding: 0.6rem;
     border: none;
@@ -54,8 +54,29 @@ body {
     background: #1890ff;
     color: #fff;
     cursor: pointer;
-  }
+  } */
   
+/* 两个按钮同一行并排：Upload 占 ~65%，Clear 占 ~35% */
+.btn-upload {
+      flex: 1 1 70%;
+      padding: 0.6rem;
+      border: none;
+      border-radius: 6px;
+      background: #1890ff;          /* 蓝色保持不变 */
+      color: #fff;
+      cursor: pointer;
+    }
+    
+    .btn-clear {
+      flex: 1 1 30%;
+      padding: 0.6rem;
+      border: none;
+      border-radius: 6px;
+      background: #ff4d4f;          /* 红色 */
+      color: #fff;
+      cursor: pointer;
+    }
+
   #status {
     margin-top: 0.8rem;
     font-size: 0.9rem;

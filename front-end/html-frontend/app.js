@@ -2,6 +2,7 @@ const $file      = document.getElementById("file-input");
 const $originImg = document.getElementById("origin-preview");
 const $resultImg = document.getElementById("result-preview");
 const $uploadBtn = document.getElementById("upload-btn");
+const $clearBtn  = document.getElementById("clear-btn");
 const $status    = document.getElementById("status");
 const $outputSel = document.getElementById("output-type");
 
@@ -21,13 +22,13 @@ $file.addEventListener("change", (e) => {
 // ② 点击上传并分析
 $uploadBtn.addEventListener("click", async () => {
   if (!selectedFile) {
-    alert("请先选择一张图片！");
+    alert("Please choose an image first!");
     return;
   }
   const formData = new FormData();
   formData.append("file", selectedFile);
 
-  $status.textContent = "⏳ 正在上传并分析...";
+  $status.textContent = "⏳ Uploading and analyzing…";
   $uploadBtn.disabled = true;
 
   try {
@@ -40,14 +41,25 @@ $uploadBtn.addEventListener("click", async () => {
     if (data.status === "success") {
       $resultImg.src = `data:image/png;base64,${data.image}`;
       $resultImg.hidden = false;
-      $status.textContent = "✅ 分析完成";
+      $status.textContent = "✅ Done";
     } else {
-      $status.textContent = `❌ 服务器错误：${data.error || "未知错误"}`;
+        $status.textContent = `❌ Server error: ${data.error || "Unknown error"}`;
     }
   } catch (err) {
     console.error(err);
-    $status.textContent = "❌ 网络错误，请检查后端是否启动";
+    $status.textContent = "❌ Network error – is the backend running?";
   } finally {
     $uploadBtn.disabled = false;
   }
+});
+
+// ③ Clear 按钮：重置一切
+$clearBtn.addEventListener("click", () => {
+    if ($originImg.src) URL.revokeObjectURL($originImg.src); // 释放本地 URL
+
+    selectedFile = null;
+    $file.value = "";      // 清空 <input type="file">
+    $originImg.hidden = true;
+    $resultImg.hidden = true;
+    $status.textContent = "";
 });

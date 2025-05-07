@@ -3,17 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>伤口分割 Demo</title>
+  <title>Wound Segmentation Demo</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <div class="panel">
-    <h2>原始图片</h2>
+    <h2>Original Image</h2>
     <div class="img-box">
       <img id="origin-preview" hidden />
     </div>
 
-    <h2>分析结果</h2>
+    <h2>Analysis Result</h2>
     <div class="img-box">
       <img id="result-preview" hidden />
     </div>
@@ -21,12 +21,17 @@
     <div class="controls">
       <input id="file-input" type="file" accept="image/*" />
       <!-- 想看不同输出可以自己切换 -->
-      <select id="output-type">
-        <option value="visualization" selected>可视化（红圈）</option>
-        <option value="mask">二值 Mask</option>
-        <option value="contour">轮廓线</option>
+
+       <select id="output-type">
+        <option value="visualization" selected>
+          Visualization (red contour)
+        </option>
+        <option value="mask">Binary Mask</option>
+        <option value="contour">Contour‑only</option>
       </select>
-      <button id="upload-btn">上传并分析图片</button>
+
+      <button id="upload-btn" class="btn-upload">Upload & Analyze</button>
+      <button id="clear-btn"  class="btn-clear"  type="button">Clear</button>
     </div>
 
     <p id="status"></p>
