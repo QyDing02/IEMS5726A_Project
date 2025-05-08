@@ -25,6 +25,6 @@ http-server -p 8080
 Run Back-End：
 
 ```bash
-python back-end/flask.py
+python back-end/main.py
 ```
 
