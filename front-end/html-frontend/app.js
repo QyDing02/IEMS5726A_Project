@@ -8,18 +8,16 @@ const $outputSel = document.getElementById("output-type");
 
 let selectedFile = null;
 
-// ① 选文件 → 先本地预览
 $file.addEventListener("change", (e) => {
   selectedFile = e.target.files[0];
   if (selectedFile) {
     $originImg.src = URL.createObjectURL(selectedFile);
     $originImg.hidden = false;
-    $resultImg.hidden = true;          // 清掉上一次结果
+    $resultImg.hidden = true; 
     $status.textContent = "";
   }
 });
 
-// ② 点击上传并分析
 $uploadBtn.addEventListener("click", async () => {
   if (!selectedFile) {
     alert("Please choose an image first!");
@@ -53,7 +51,6 @@ $uploadBtn.addEventListener("click", async () => {
   }
 });
 
-// ③ Clear 按钮：重置一切
 $clearBtn.addEventListener("click", () => {
     if ($originImg.src) URL.revokeObjectURL($originImg.src); // 释放本地 URL
 

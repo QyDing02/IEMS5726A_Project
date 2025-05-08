@@ -1,127 +1,114 @@
 body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-    background: #f6f7f9;
-    margin: 0;
-    padding: 2rem 0;
-    display: flex;
-    justify-content: center;
-  }
-  
-  .panel {
-    width: 90%;          /* 让面板在桌面端更宽一点 */
-    max-width: 1000px;   /* 上限 */
-    background: #fff;
-    border-radius: 12px;
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
-    padding: 1.5rem;
-  }
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  background: #f6f7f9;
+  margin: 0;
+  padding: 2rem 0;
+  display: flex;
+  justify-content: center;
+}
 
-  /* 一行两列（桌面端） */ 
-  .img-row {
-    display: flex;
-    gap: 1rem;
-  }
-  
-  .img-col {
-    flex: 1 1 50%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  h2 {
-    margin: 1rem 0 0.5rem;
-    text-align: center;
-  }
-  
-  .img-box {
-    width: 100%;
-    height: 360px;
-    background: #000;          /* 跟你截图里的黑底保持一致 */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-  }
-  
-  .img-box img {
-    max-width: 100%;
-    max-height: 100%;
-  }
-  
-  .controls {
-    margin-top: 1.2rem;
-    display: flex;
-    /* gap: 0.5rem; */
-    /* flex-wrap: wrap; */
-    flex-direction: column;
-    gap: 0.8rem; 
-  }
+.panel {
+  width: 90%;
+  max-width: 1000px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  padding: 1.5rem;
+}
 
-  .action-row {
-      display: flex;
-      justify-content: center;   /* 整行居中 */
-      gap: 0.8rem;               /* 按钮 / 下拉 间距 */
-      flex-wrap: wrap;           /* 小屏自动换行 */
-      width: auto;
-      margin: 0 auto;
-    }
-  
-  .action-row select,
-  .btn-upload,
-  .btn-clear {
-    width: 20%;
-    min-width: 140px;          /* 防爆文字，可调 */
-    height: 42px;
-    font-size: .95rem;
-  }
-  
-  #file-input {
-    flex: 1 1 100%;
-  }
-  
-  /* #upload-btn {
-    flex: 1 1 100%;
-    padding: 0.6rem;
-    border: none;
-    border-radius: 6px;
-    background: #1890ff;
-    color: #fff;
-    cursor: pointer;
-  } */
-  
-/* 两个按钮同一行并排：Upload 占 ~65%，Clear 占 ~35% */
+.img-row {
+  display: flex;
+  gap: 1rem;
+}
+
+.img-col {
+  flex: 1 1 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h2 {
+  margin: 1rem 0 0.5rem;
+  text-align: center;
+}
+
+.img-box {
+  width: 100%;
+  height: 360px;
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.img-box img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.controls {
+  margin-top: 1.2rem;
+  display: flex;
+  /* gap: 0.5rem; */
+  /* flex-wrap: wrap; */
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.action-row {
+  display: flex;
+  justify-content: center;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+  width: auto;
+  margin: 0 auto;
+}
+
+.action-row select,
+.btn-upload,
+.btn-clear {
+  width: 20%;
+  min-width: 140px;
+  height: 42px;
+  font-size: .95rem;
+}
+
+#file-input {
+  flex: 1 1 100%;
+}
+
 .btn-upload {
-      /* flex: 1 1 70%; */
-      width: 20%;
-      min-width: 140px;
-      padding: 0.6rem;
-      border: none;
-      border-radius: 6px;
-      background: #1890ff;          /* 蓝色保持不变 */
-      color: #fff;
-      cursor: pointer;
-    }
-    
-    .btn-clear {
-      /* flex: 1 1 30%; */
-      width: 20%;
-      min-width: 140px;
-      padding: 0.6rem;
-      border: none;
-      border-radius: 6px;
-      background: #ff4d4f;          /* 红色 */
-      color: #fff;
-      cursor: pointer;
-    }
+  /* flex: 1 1 70%; */
+  width: 20%;
+  min-width: 140px;
+  padding: 0.6rem;
+  border: none;
+  border-radius: 6px;
+  background: #1890ff;
+  color: #fff;
+  cursor: pointer;
+}
 
-  #status {
-    margin-top: 0.8rem;
-    font-size: 0.9rem;
-    text-align: center;
-  }
+.btn-clear {
+  /* flex: 1 1 30%; */
+  width: 20%;
+  min-width: 140px;
+  padding: 0.6rem;
+  border: none;
+  border-radius: 6px;
+  background: #ff4d4f;
+  color: #fff;
+  cursor: pointer;
+}
 
-/* ③ 移动端（窄屏）依旧纵向排列 */
+#status {
+  margin-top: 0.8rem;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
 @media (max-width: 700px) {
   .img-row {
     flex-direction: column;
@@ -129,7 +116,6 @@ body {
 
   .img-box {
     height: 260px;
-    /* 移动端可稍小 */
   }
 
   .action-row {
