@@ -8,30 +8,38 @@
 </head>
 <body>
   <div class="panel">
-    <h2>Original Image</h2>
-    <div class="img-box">
-      <img id="origin-preview" hidden />
-    </div>
-
-    <h2>Analysis Result</h2>
-    <div class="img-box">
-      <img id="result-preview" hidden />
+    <h2>Wound Segmentation Demo</h2>
+    <div class="img-row">
+      <div class="img-col">
+        <h2>Original Image</h2>
+        <div class="img-box">
+          <img id="origin-preview" hidden />
+        </div>
+      </div>
+    
+      <div class="img-col">
+        <h2>Analysis Result</h2>
+        <div class="img-box">
+          <img id="result-preview" hidden />
+        </div>
+      </div>
     </div>
 
     <div class="controls">
       <input id="file-input" type="file" accept="image/*" />
       <!-- 想看不同输出可以自己切换 -->
-
-       <select id="output-type">
+      <div class="action-row">
+      <select id="output-type">
         <option value="visualization" selected>
-          Visualization (red contour)
+          Visualization
+           <!-- (red contour) -->
         </option>
         <option value="mask">Binary Mask</option>
         <option value="contour">Contour‑only</option>
       </select>
-
-      <button id="upload-btn" class="btn-upload">Upload & Analyze</button>
-      <button id="clear-btn"  class="btn-clear"  type="button">Clear</button>
+      <button id="upload-btn" class="btn-upload">Upload&nbsp;&amp;&nbsp;Analyze</button>
+      <button id="clear-btn" class="btn-clear" type="button">Clear</button>
+    </div>
     </div>
 
     <p id="status"></p>

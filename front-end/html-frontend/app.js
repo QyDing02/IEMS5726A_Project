@@ -33,7 +33,7 @@ $uploadBtn.addEventListener("click", async () => {
 
   try {
     const res = await fetch(
-      `http://localhost:5000/predict?output=${$outputSel.value}`,
+      `http://192.168.31.39:5000/predict?output=${$outputSel.value}`,
       { method: "POST", body: formData }
     );
     const data = await res.json();
