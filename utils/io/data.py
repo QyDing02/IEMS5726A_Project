@@ -208,7 +208,7 @@ def save_rgb_results(np_array, outpath, test_label_filenames_list):
 
 def save_history(model, model_name, training_history, dataset, n_filters, epoch, learning_rate, loss,
                  color_space, path=None, temp_name=None):
-    save_weight_filename = temp_name if temp_name else str(datetime.datetime.now())
+    save_weight_filename = temp_name if temp_name else datetime.datetime.now().strftime('%Y-%m-%d_%H-%M-%S')
     model.save('{}{}.hdf5'.format(path, save_weight_filename))
     with open('{}{}.json'.format(path, save_weight_filename), 'w') as f:
         json.dump(training_history.history, f, indent=2)

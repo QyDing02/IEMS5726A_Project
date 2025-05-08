@@ -81,7 +81,8 @@ def load_model_simple():
     global model
     try:
         model = load_model(
-            './training_history/deeplab.hdf5',
+            # './training_history/deeplab.hdf5',
+            './training_history/2025-05-03 18-04-04.106775.hdf5',
             custom_objects={
                 'relu6': relu6,
                 'BilinearUpsampling': BilinearUpsampling,
