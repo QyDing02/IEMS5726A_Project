@@ -5,7 +5,6 @@ from keras.utils.generic_utils import CustomObjectScope
 
 from models.unets import Unet2D
 from models.deeplab import Deeplabv3, relu6, DepthwiseConv2D, BilinearUpsampling
-from models.FCN import FCN_Vgg16_16s
 from models.SegNet import SegNet
 
 from utils.learning.metrics import dice_coef, precision, recall
@@ -37,8 +36,6 @@ with CustomObjectScope({'relu6': relu6,'DepthwiseConv2D': DepthwiseConv2D, 'Bili
     model = load_model('training_history/2019-12-19 01%3A53%3A15.480800.hdf5'
                        , custom_objects={'dice_coef': dice_coef, 'precision':precision, 'recall':recall})
 
-######### Vgg16 ##########
-# model, model_name = FCN_Vgg16_16s(input_shape=(input_dim_x, input_dim_y, 3))
 
 ######### SegNet ##########
 # segnet = SegNet(n_filters, input_dim_x, input_dim_y, num_channels=3)

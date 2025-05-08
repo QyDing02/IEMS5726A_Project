@@ -6,7 +6,6 @@ from keras.utils.generic_utils import CustomObjectScope
 
 from models.unets import Unet2D
 from models.deeplab import Deeplabv3, relu6, BilinearUpsampling, DepthwiseConv2D
-from models.FCN import FCN_Vgg16_16s
 
 from utils.learning.metrics import dice_coef, precision, recall
 from utils.BilinearUpSampling import BilinearUpSampling2D

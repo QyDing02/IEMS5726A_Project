@@ -4,7 +4,6 @@ from keras.utils.generic_utils import CustomObjectScope
 
 from models.unets import Unet2D
 from models.deeplab import Deeplabv3, relu6, BilinearUpsampling, DepthwiseConv2D
-from models.FCN import FCN_Vgg16_16s
 
 from utils.learning.metrics import dice_coef, precision, recall
 from utils.BilinearUpSampling import BilinearUpSampling2D
@@ -41,12 +40,6 @@ x_test, test_label_filenames_list = load_test_images(path)
 #                                  'relu6':relu6,
 #                                  'DepthwiseConv2D':DepthwiseConv2D,
 #                                  'BilinearUpsampling':BilinearUpsampling})
-
-# ### get VGG16 model
-# model, model_name = FCN_Vgg16_16s(input_shape=(input_dim_x, input_dim_y, 3))
-# with CustomObjectScope({'BilinearUpSampling2D':BilinearUpSampling2D}):
-#     model = load_model('./azh_wound_care_center_diabetic_foot_training_history/' + weight_file_name
-#                    , custom_objects={'dice_coef': dice_coef})
 
 # ### get mobilenetv2 model
 model = Deeplabv3(input_shape=(input_dim_x, input_dim_y, 3), classes=1)
